@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A68139E5E69F49C1DF78F455 /* libPods-movie-publisher-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 66C6CB4141611497CFCB9AB1 /* libPods-movie-publisher-ios.a */; };
 		EA503FCD29399EDD0011CE66 /* sample_video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = EA503FCC29399ED90011CE66 /* sample_video.mp4 */; };
 		EA799C1F292F4C750064465A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA799C1E292F4C750064465A /* AppDelegate.swift */; };
 		EA799C21292F4C750064465A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA799C20292F4C750064465A /* SceneDelegate.swift */; };
@@ -18,13 +19,11 @@
 		EAAF40AE2941E91900FADFCD /* CustomAudioDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAF40AD2941E91900FADFCD /* CustomAudioDevice.swift */; };
 		EAAFB3DD2951AF0700C5BF35 /* vonage_roadshow.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = EAAFB3DC2951AEFE00C5BF35 /* vonage_roadshow.mp4 */; };
 		EAB0A8312988D191001078B7 /* test_audio.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EAB0A8302988D191001078B7 /* test_audio.mp3 */; };
-		EED3CC51FC8111EDDB8A47C2 /* libPods-movie-publisher-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 26129BF2E1BC5C313EEAEDA5 /* libPods-movie-publisher-ios.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		26129BF2E1BC5C313EEAEDA5 /* libPods-movie-publisher-ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-movie-publisher-ios.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6E183F2E14E26B0A983474DC /* Pods-movie-publisher-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-movie-publisher-ios.debug.xcconfig"; path = "Target Support Files/Pods-movie-publisher-ios/Pods-movie-publisher-ios.debug.xcconfig"; sourceTree = "<group>"; };
-		72E01649A89143281EF234FA /* Pods-movie-publisher-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-movie-publisher-ios.release.xcconfig"; path = "Target Support Files/Pods-movie-publisher-ios/Pods-movie-publisher-ios.release.xcconfig"; sourceTree = "<group>"; };
+		66C6CB4141611497CFCB9AB1 /* libPods-movie-publisher-ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-movie-publisher-ios.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6AEE5E2FC4AE527BACFA4C0 /* Pods-movie-publisher-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-movie-publisher-ios.release.xcconfig"; path = "Target Support Files/Pods-movie-publisher-ios/Pods-movie-publisher-ios.release.xcconfig"; sourceTree = "<group>"; };
 		EA503FCC29399ED90011CE66 /* sample_video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = sample_video.mp4; sourceTree = "<group>"; };
 		EA799C1B292F4C750064465A /* movie-publisher-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "movie-publisher-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA799C1E292F4C750064465A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -38,6 +37,7 @@
 		EAAF40AD2941E91900FADFCD /* CustomAudioDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAudioDevice.swift; sourceTree = "<group>"; };
 		EAAFB3DC2951AEFE00C5BF35 /* vonage_roadshow.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = vonage_roadshow.mp4; sourceTree = "<group>"; };
 		EAB0A8302988D191001078B7 /* test_audio.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = test_audio.mp3; sourceTree = "<group>"; };
+		EE7D581A17BE18AF84790725 /* Pods-movie-publisher-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-movie-publisher-ios.debug.xcconfig"; path = "Target Support Files/Pods-movie-publisher-ios/Pods-movie-publisher-ios.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,7 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EED3CC51FC8111EDDB8A47C2 /* libPods-movie-publisher-ios.a in Frameworks */,
+				A68139E5E69F49C1DF78F455 /* libPods-movie-publisher-ios.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,16 +55,16 @@
 		35C87D8BA7B5722A8518ADF4 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				6E183F2E14E26B0A983474DC /* Pods-movie-publisher-ios.debug.xcconfig */,
-				72E01649A89143281EF234FA /* Pods-movie-publisher-ios.release.xcconfig */,
+				EE7D581A17BE18AF84790725 /* Pods-movie-publisher-ios.debug.xcconfig */,
+				B6AEE5E2FC4AE527BACFA4C0 /* Pods-movie-publisher-ios.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		6799E6CD8DC540F9990C6D2A /* Frameworks */ = {
+		75823283D3A8A422DC412CBA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				26129BF2E1BC5C313EEAEDA5 /* libPods-movie-publisher-ios.a */,
+				66C6CB4141611497CFCB9AB1 /* libPods-movie-publisher-ios.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -75,7 +75,7 @@
 				EA799C1D292F4C750064465A /* movie-publisher-ios */,
 				EA799C1C292F4C750064465A /* Products */,
 				35C87D8BA7B5722A8518ADF4 /* Pods */,
-				6799E6CD8DC540F9990C6D2A /* Frameworks */,
+				75823283D3A8A422DC412CBA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -113,7 +113,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EA799C2F292F4C780064465A /* Build configuration list for PBXNativeTarget "movie-publisher-ios" */;
 			buildPhases = (
-				289BE5BE262C18C5E7224922 /* [CP] Check Pods Manifest.lock */,
+				FDD9926D7E7A3530BB949CA1 /* [CP] Check Pods Manifest.lock */,
 				EA799C17292F4C750064465A /* Sources */,
 				EA799C18292F4C750064465A /* Frameworks */,
 				EA799C19292F4C750064465A /* Resources */,
@@ -177,7 +177,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		289BE5BE262C18C5E7224922 /* [CP] Check Pods Manifest.lock */ = {
+		FDD9926D7E7A3530BB949CA1 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -352,7 +352,7 @@
 		};
 		EA799C30292F4C780064465A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6E183F2E14E26B0A983474DC /* Pods-movie-publisher-ios.debug.xcconfig */;
+			baseConfigurationReference = EE7D581A17BE18AF84790725 /* Pods-movie-publisher-ios.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -384,7 +384,7 @@
 		};
 		EA799C31292F4C780064465A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 72E01649A89143281EF234FA /* Pods-movie-publisher-ios.release.xcconfig */;
+			baseConfigurationReference = B6AEE5E2FC4AE527BACFA4C0 /* Pods-movie-publisher-ios.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

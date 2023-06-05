@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "7BE10E1C-2102-48F8-9C0F-29A774AF26AA"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E18687F2-0481-4436-ACAF-7AC9F5048CFD"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "movie-publisher-ios/CustomAudioDevice.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "728"
+            endingLineNumber = "728"
+            landmarkName = "recordCb(inRefCon:ioActionFlags:inTimeStamp:inBusNumber:inNumberFrames:ioData:)"
+            landmarkType = "9">
+            <Locations>
+               <Location
+                  uuid = "E18687F2-0481-4436-ACAF-7AC9F5048CFD - fc1627ab488f3c8c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "movie_publisher_ios.recordCb(inRefCon: Swift.UnsafeMutableRawPointer, ioActionFlags: Swift.UnsafeMutablePointer&lt;__C.AudioUnitRenderActionFlags&gt;, inTimeStamp: Swift.UnsafePointer&lt;__C.AudioTimeStamp&gt;, inBusNumber: Swift.UInt32, inNumberFrames: Swift.UInt32, ioData: Swift.Optional&lt;Swift.UnsafeMutablePointer&lt;__C.AudioBufferList&gt;&gt;) -&gt; Swift.Int32"
+                  moduleName = "movie-publisher-ios"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jshah2/myCode/movie-publisher-ios/movie-publisher-ios/CustomAudioDevice.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "724"
+                  endingLineNumber = "724"
+                  offsetFromSymbolStart = "2356">
+               </Location>
+               <Location
+                  uuid = "E18687F2-0481-4436-ACAF-7AC9F5048CFD - fc1627ab488f3c8c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "movie_publisher_ios.recordCb(inRefCon: Swift.UnsafeMutableRawPointer, ioActionFlags: Swift.UnsafeMutablePointer&lt;__C.AudioUnitRenderActionFlags&gt;, inTimeStamp: Swift.UnsafePointer&lt;__C.AudioTimeStamp&gt;, inBusNumber: Swift.UInt32, inNumberFrames: Swift.UInt32, ioData: Swift.Optional&lt;Swift.UnsafeMutablePointer&lt;__C.AudioBufferList&gt;&gt;) -&gt; Swift.Int32"
+                  moduleName = "movie-publisher-ios"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jshah2/myCode/movie-publisher-ios/movie-publisher-ios/CustomAudioDevice.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "724"
+                  endingLineNumber = "724"
+                  offsetFromSymbolStart = "2353">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9E44D524-D78C-44B1-B9FA-D64C4D81A649"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "movie-publisher-ios/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "doPublish()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "9E44D524-D78C-44B1-B9FA-D64C4D81A649 - 127220c6970437f4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "movie_publisher_ios.ViewController.doPublish() -&gt; ()"
+                  moduleName = "movie-publisher-ios"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jshah2/myCode/movie-publisher-ios/movie-publisher-ios/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "82"
+                  endingLineNumber = "82"
+                  offsetFromSymbolStart = "1441">
+               </Location>
+               <Location
+                  uuid = "9E44D524-D78C-44B1-B9FA-D64C4D81A649 - 127220c6970437f4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "movie_publisher_ios.ViewController.doPublish() -&gt; ()"
+                  moduleName = "movie-publisher-ios"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jshah2/myCode/movie-publisher-ios/movie-publisher-ios/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "82"
+                  endingLineNumber = "82"
+                  offsetFromSymbolStart = "1569">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "06F143D1-9CEA-4888-9234-9738E831B369"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "movie-publisher-ios/CustomAudioDevice.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "743"
+            endingLineNumber = "743"
+            landmarkName = "recordCb(inRefCon:ioActionFlags:inTimeStamp:inBusNumber:inNumberFrames:ioData:)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "78D93C72-9999-4C78-A1C9-19E148551DFE"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "movie-publisher-ios/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "220"
+            endingLineNumber = "220"
+            landmarkName = "subscriber(_:caption:isFinal:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "78D93C72-9999-4C78-A1C9-19E148551DFE - 293aa03e71d406fe"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "movie_publisher_ios.ViewController.subscriber(_: __C.OTSubscriberKit, caption: Swift.String, isFinal: Swift.Bool) -&gt; ()"
+                  moduleName = "movie-publisher-ios"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jshah2/myCode/movie-publisher-ios/movie-publisher-ios/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "218"
+                  endingLineNumber = "218"
+                  offsetFromSymbolStart = "195">
+               </Location>
+               <Location
+                  uuid = "78D93C72-9999-4C78-A1C9-19E148551DFE - 293aa03e71d40711"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "movie_publisher_ios.ViewController.subscriber(_: __C.OTSubscriberKit, caption: Swift.String, isFinal: Swift.Bool) -&gt; ()"
+                  moduleName = "movie-publisher-ios"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jshah2/myCode/movie-publisher-ios/movie-publisher-ios/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "219"
+                  endingLineNumber = "219"
+                  offsetFromSymbolStart = "195">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C3669573-574C-4B17-9FCB-AA864A5167EF"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "movie-publisher-ios/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "198"
+            endingLineNumber = "198"
+            landmarkName = "subscriberDidConnect(toStream:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CD40065C-3AED-4AF2-9D7E-914FAE5F4A82"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "movie-publisher-ios/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "200"
+            endingLineNumber = "200"
+            landmarkName = "subscriberDidConnect(toStream:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "233526C5-32DA-4AF9-AD0E-B54E85FDEEDC"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "movie-publisher-ios/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "224"
+            endingLineNumber = "224"
+            landmarkName = "subscriber(_:caption:isFinal:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "233526C5-32DA-4AF9-AD0E-B54E85FDEEDC - 293aa03e71d407d7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "movie_publisher_ios.ViewController.subscriber(_: __C.OTSubscriberKit, caption: Swift.String, isFinal: Swift.Bool) -&gt; ()"
+                  moduleName = "movie-publisher-ios"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jshah2/myCode/movie-publisher-ios/movie-publisher-ios/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "225"
+                  endingLineNumber = "225"
+                  offsetFromSymbolStart = "654">
+               </Location>
+               <Location
+                  uuid = "233526C5-32DA-4AF9-AD0E-B54E85FDEEDC - 293aa03e71d407d7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "movie_publisher_ios.ViewController.subscriber(_: __C.OTSubscriberKit, caption: Swift.String, isFinal: Swift.Bool) -&gt; ()"
+                  moduleName = "movie-publisher-ios"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jshah2/myCode/movie-publisher-ios/movie-publisher-ios/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "225"
+                  endingLineNumber = "225"
+                  offsetFromSymbolStart = "662">
+               </Location>
+               <Location
+                  uuid = "233526C5-32DA-4AF9-AD0E-B54E85FDEEDC - 293aa03e71d407d7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "movie_publisher_ios.ViewController.subscriber(_: __C.OTSubscriberKit, caption: Swift.String, isFinal: Swift.Bool) -&gt; ()"
+                  moduleName = "movie-publisher-ios"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jshah2/myCode/movie-publisher-ios/movie-publisher-ios/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "225"
+                  endingLineNumber = "225"
+                  offsetFromSymbolStart = "907">
+               </Location>
+               <Location
+                  uuid = "233526C5-32DA-4AF9-AD0E-B54E85FDEEDC - 293aa03e71d407d7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "movie_publisher_ios.ViewController.subscriber(_: __C.OTSubscriberKit, caption: Swift.String, isFinal: Swift.Bool) -&gt; ()"
+                  moduleName = "movie-publisher-ios"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jshah2/myCode/movie-publisher-ios/movie-publisher-ios/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "225"
+                  endingLineNumber = "225"
+                  offsetFromSymbolStart = "933">
+               </Location>
+               <Location
+                  uuid = "233526C5-32DA-4AF9-AD0E-B54E85FDEEDC - 293aa03e71d407d7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "movie_publisher_ios.ViewController.subscriber(_: __C.OTSubscriberKit, caption: Swift.String, isFinal: Swift.Bool) -&gt; ()"
+                  moduleName = "movie-publisher-ios"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jshah2/myCode/movie-publisher-ios/movie-publisher-ios/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "225"
+                  endingLineNumber = "225"
+                  offsetFromSymbolStart = "447">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

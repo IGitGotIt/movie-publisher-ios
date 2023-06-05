@@ -8,13 +8,24 @@
 import UIKit
 import OpenTok
 
-// Replace with your OpenTok API key
-let kApiKey = ""
-// Replace with your generated session ID
-let kSessionId = ""
-// Replace with your generated token
-let kToken = ""
+extension Date {
+    var millisecondsSince1970:Int64 {
+        Int64((self.timeIntervalSince1970 * 1000.0).rounded())
+    }
+    
+    init(milliseconds:Int64) {
+        self = Date(timeIntervalSince1970: TimeInterval(milliseconds) / 1000)
+    }
+}
 
+
+
+// Replace with your OpenTok API key
+let kApiKey = "44935341"
+// Replace with your generated session ID
+let kSessionId = "2_MX40NDkzNTM0MX5-MTY4NTk5NDEzNzgxOH4xa3RsRllEcTk2UEcvSkpnaXFPZFdmaUt-fn4"
+// Replace with your generated token
+let kToken = "T1==cGFydG5lcl9pZD00NDkzNTM0MSZzaWc9Zjg3MzE1ZGUzNzc1ZWZkOThlYmQ0ZjZhYTgyZGY2M2YzNmI4OWI1MjpzZXNzaW9uX2lkPTJfTVg0ME5Ea3pOVE0wTVg1LU1UWTROVGs1TkRFek56Z3hPSDR4YTNSc1JsbEVjVGsyVUVjdlNrcG5hWEZQWkZkbWFVdC1mbjQmY3JlYXRlX3RpbWU9MTY4NTk5NDEzOCZub25jZT0wLjczODY1MzAyNjg1MDQxOSZyb2xlPW1vZGVyYXRvciZleHBpcmVfdGltZT0xNjg2MDgwNTM4JmluaXRpYWxfbGF5b3V0X2NsYXNzX2xpc3Q9"
 
 let kWidgetHeight: CGFloat = 240
 let kWidgetWidth: CGFloat = 320
@@ -32,6 +43,9 @@ class ViewController: UIViewController {
     var publisher: OTPublisher?
     var subscriber: OTSubscriber?
     var capturer: VideoCapturer?
+    var firstCaptionTextRcvd = false
+    var timeCaptionStartMarker : Int64 = 0
+    let timeVideoFirstTalk: Int64 = Int64(8.4 * 1000)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +57,7 @@ class ViewController: UIViewController {
         defer {
             process(error: error)
         }
+        session.perform(Selector(("setApiRootURL:")), with: NSURL(string: "https://api.dev.opentok.com"))
         session.connect(withToken: kToken, error: &error)
     }
     
@@ -56,26 +71,28 @@ class ViewController: UIViewController {
         settings.name = videoPublisherName
         
         publisher = OTPublisher(delegate: self, settings: settings)
-        publisher?.cameraPosition = .back
-        publisher?.audioFallbackEnabled = false
-
+       
+   
         
         if let path = Bundle.main.path(forResource: videoFileName, ofType: "mp4", inDirectory: "") {
             let videoUrl = URL.init(fileURLWithPath: path)
-            
+
             capturer = VideoCapturer(url: videoUrl)
-            
+
             let customAudioDevice = CustomAudioDevice(url: videoUrl, videoCapturer: capturer!)
             OTAudioDeviceManager.setAudioDevice(customAudioDevice)
-            
-            publisher?.videoCapture = capturer
-            
-            session.publish(publisher!, error: &error)
-            
-            if let pubView = publisher?.view {
-                pubView.frame = CGRect(x: screenWidth - kWidgetWidth, y: screenHeight - kWidgetHeight, width: kWidgetWidth, height: kWidgetHeight)
-                view.addSubview(pubView)
-            }
+
+
+
+        }
+        publisher?.publishCaptions = false
+        //  publisher?.videoCapture = capturer
+        session.publish(publisher!, error: &error)
+       
+        
+        if let pubView = publisher?.view {
+            pubView.frame = CGRect(x: 0, y: 0, width: kWidgetWidth, height: kWidgetHeight)
+            view.addSubview(pubView)
         }
     
     }
@@ -85,6 +102,7 @@ class ViewController: UIViewController {
             process(error: error)
         }
         subscriber = OTSubscriber(stream: stream, delegate: self)
+        subscriber?.captionsDelegate = self
         session.subscribe(subscriber!, error: &error)
     }
     fileprivate func process(error err: OTError?) {
@@ -145,7 +163,7 @@ extension ViewController: OTSessionDelegate {
     
     func session(_ session: OTSession, streamCreated stream: OTStream) {
         print("Session streamCreated: \(stream.streamId)")
-        doSubscribe(stream)
+       // doSubscribe(stream)
     }
     
     func session(_ session: OTSession, streamDestroyed stream: OTStream) {
@@ -161,7 +179,7 @@ extension ViewController: OTSessionDelegate {
 // MARK: - OTPublisher delegate callbacks
 extension ViewController: OTPublisherDelegate {
     func publisher(_ publisher: OTPublisherKit, streamCreated stream: OTStream) {
-        print("Published")
+        doSubscribe(stream)
     }
     
     func publisher(_ publisher: OTPublisherKit, streamDestroyed stream: OTStream) {
@@ -177,10 +195,15 @@ extension ViewController: OTPublisherDelegate {
 // MARK: - OTSubscriber delegate callbacks
 extension ViewController: OTSubscriberDelegate {
     func subscriberDidConnect(toStream subscriberKit: OTSubscriberKit) {
+        publisher?.publishCaptions = true
+        subscriber?.subscribeToCaptions = true
+        timeCaptionStartMarker = Date().millisecondsSince1970
+        
+        print("subscriberDidConnect \(timeCaptionStartMarker)")
         if let subsView = subscriber?.view {
-            subsView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
+            subsView.frame = CGRect(x: 0, y: kWidgetHeight , width: kWidgetWidth, height: kWidgetHeight)
             view.addSubview(subsView)
-            view.sendSubviewToBack(subsView);
+        
         }
     }
 
@@ -189,6 +212,23 @@ extension ViewController: OTSubscriberDelegate {
     }
 
     func subscriberVideoDataReceived(_ subscriber: OTSubscriber) {
+    }
+}
+
+extension ViewController : OTSubscriberKitCaptionsDelegate {
+    func subscriber(_ subscriber: OTSubscriberKit, caption text: String, isFinal: Bool) {
+        if !firstCaptionTextRcvd  {
+            let currentTime = Date().millisecondsSince1970
+            let delta = currentTime - (timeCaptionStartMarker + timeVideoFirstTalk)
+            if delta < 0 {
+             //   print("why \(text)")
+            }
+           // print("*** Captions Round trip in ms:" + "\(delta)" )
+            print("\(text)")
+            //firstCaptionTextRcvd = true
+            //timeCaptionStartMarker = 0
+        }
+
     }
 }
 

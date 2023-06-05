@@ -8,6 +8,8 @@
 
 import Foundation
 import OpenTok
+var clockStarted = false
+var clockStartedPrinted = false
 
 class CustomAudioDevice: NSObject, AudioTimeStampDelegate {
 #if targetEnvironment(simulator)
@@ -23,14 +25,12 @@ class CustomAudioDevice: NSObject, AudioTimeStampDelegate {
     static let kToMicroSecond: Double = 1000000
     static let kMaxPlayoutDelay: UInt8 = 150
     static let kMaxSampleBuffer = 8192*2
-    
+
     var audioFormat = OTAudioFormat()
     let safetyQueue = DispatchQueue(label: "ot-audio-driver")
     let audioCaptureQueue = DispatchQueue(label: "file-audio-driver")
 
-    /** Local Audio **/
-    var localAudioPlayer: AVAudioPlayer!
-    var isLocalPlayerPlaying = false
+
     
     /** OT capture&render **/
     var deviceAudioBus: OTAudioBus?
@@ -82,6 +82,8 @@ class CustomAudioDevice: NSObject, AudioTimeStampDelegate {
     fileprivate var avAudioSessionChannels = 0
     fileprivate var isAudioSessionSetup = false
 
+
+    
     deinit {
         tearDownAudio()
         removeObservers()
@@ -95,9 +97,6 @@ class CustomAudioDevice: NSObject, AudioTimeStampDelegate {
         
         audioFormat.sampleRate = CustomAudioDevice.kSampleRate
         audioFormat.numChannels = 1
-        
-        localAudioPlayer = try! AVAudioPlayer(contentsOf: url)
-        localAudioPlayer.numberOfLoops = -1
     }
     
     func valueChanged() -> CMTime {
@@ -361,18 +360,7 @@ class CustomAudioDevice: NSObject, AudioTimeStampDelegate {
               fatalError("Unable to read Asset: \(error) : \(#function).")
           }
     }
-    func playLocalAudio() {
-        if (!isLocalPlayerPlaying) {
-            isLocalPlayerPlaying = true
-            localAudioPlayer.play()
-        }
-    }
-    func stopLocalAudio() {
-        if (isLocalPlayerPlaying) {
-            isLocalPlayerPlaying = false
-            localAudioPlayer.stop()
-        }
-    }
+
 }
 
 extension UnsafeMutableRawPointer {
@@ -482,7 +470,7 @@ extension CustomAudioDevice: OTAudioDevice {
             }
         }
         setupAudioSession()
-        playLocalAudio()
+      
 
         if recordingVoiceUnit == nil {
             recording = setupAudioUnit(withPlayout: false)
@@ -515,7 +503,7 @@ extension CustomAudioDevice: OTAudioDevice {
                 return false
             }
         }
-        stopLocalAudio()
+     
 
         freeupAudioBuffers()
         
@@ -739,7 +727,6 @@ func recordCb(inRefCon:UnsafeMutableRawPointer,
         if (audioDevice.fileAudioBuffer.count > 0) {
             while (audioDevice.isFileAudioLocked && audioDevice.recording) {}
             audioDevice.isFileAudioLocked = true
-
             let numberOfFrameToExtract = audioDevice.fileAudioBuffer.count > inNumberFrames ? Int(inNumberFrames) : audioDevice.fileAudioBuffer.count
             // Get number of bytes from file audio based on microphone reading bytes
             let fileBuffer = Array(audioDevice.fileAudioBuffer.prefix(Int(numberOfFrameToExtract)))
@@ -748,9 +735,13 @@ func recordCb(inRefCon:UnsafeMutableRawPointer,
 
             var newBuffer = [Int16]()
               for i in 0..<Int(inNumberFrames) {
-                  var temp = Double(micBuffer[i])
+                 // var temp = Double(micBuffer[i])
+                  var temp = Double(fileBuffer[i])
                   if (i < fileBuffer.count) {
-                      temp = temp + Double(fileBuffer[i])
+                      temp =  Double(fileBuffer[i])
+                      if !clockStarted && temp != 0 {
+                          clockStarted = true
+                      }
                   }
                   if (temp < Double(Int16.min)) {
                       temp = Double(Int16.min)
@@ -763,6 +754,10 @@ func recordCb(inRefCon:UnsafeMutableRawPointer,
 
             let audioPointer = UnsafeMutableRawPointer(mutating: newBuffer)
             // OT Capture
+            if clockStarted && !clockStartedPrinted {
+                print("First non zero audio byte send ** : \(Date())")
+                clockStartedPrinted = true
+            }
             audioDevice.deviceAudioBus!.writeCaptureData(audioPointer, numberOfSamples: inNumberFrames)
             // Remove captured bytes
             audioDevice.isFileAudioLocked = false
