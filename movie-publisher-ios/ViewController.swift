@@ -221,12 +221,12 @@ extension ViewController : OTSubscriberKitCaptionsDelegate {
             let currentTime = Date().millisecondsSince1970
             let delta = currentTime - (timeCaptionStartMarker + timeVideoFirstTalk)
             if delta < 0 {
-             //   print("why \(text)")
+               print("vonage.ai too qucik \(text)")
             }
-           // print("*** Captions Round trip in ms:" + "\(delta)" )
-            print("\(text)")
-            //firstCaptionTextRcvd = true
-            //timeCaptionStartMarker = 0
+            print("*** Captions Round trip in ms:" + "\(delta)" )
+   
+            firstCaptionTextRcvd = true
+            timeCaptionStartMarker = 0
         }
 
     }
