@@ -23,9 +23,9 @@ extension Date {
 // Replace with your OpenTok API key
 let kApiKey = "44935341"
 // Replace with your generated session ID
-let kSessionId = "2_MX40NDkzNTM0MX5-MTY4NTk5NDEzNzgxOH4xa3RsRllEcTk2UEcvSkpnaXFPZFdmaUt-fn4"
+let kSessionId = ""
 // Replace with your generated token
-let kToken = "T1==cGFydG5lcl9pZD00NDkzNTM0MSZzaWc9Zjg3MzE1ZGUzNzc1ZWZkOThlYmQ0ZjZhYTgyZGY2M2YzNmI4OWI1MjpzZXNzaW9uX2lkPTJfTVg0ME5Ea3pOVE0wTVg1LU1UWTROVGs1TkRFek56Z3hPSDR4YTNSc1JsbEVjVGsyVUVjdlNrcG5hWEZQWkZkbWFVdC1mbjQmY3JlYXRlX3RpbWU9MTY4NTk5NDEzOCZub25jZT0wLjczODY1MzAyNjg1MDQxOSZyb2xlPW1vZGVyYXRvciZleHBpcmVfdGltZT0xNjg2MDgwNTM4JmluaXRpYWxfbGF5b3V0X2NsYXNzX2xpc3Q9"
+let kToken = ""
 
 let kWidgetHeight: CGFloat = 240
 let kWidgetWidth: CGFloat = 320
